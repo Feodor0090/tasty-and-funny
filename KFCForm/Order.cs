@@ -17,7 +17,7 @@ namespace KFCForm
         List<OrderItem> orderItems = new List<OrderItem>();
         Timer tm = new Timer();
     
-        public double OrderTotalPrice => orderItems.Select(x=>x.Price).Sum()*(1d-Discount);
+        public double OrderTotalPrice => orderItems.Select(x => x.Price).Sum() * (1d - Discount);
         // размер скидки, 0d - нету, 1d - 100%
         public double Discount;
         
@@ -25,7 +25,6 @@ namespace KFCForm
         {
             InitializeComponent(); 
             tm = new Timer();
-            
         }
 
         public Order(List<OrderItem> orderItems)
@@ -46,6 +45,7 @@ namespace KFCForm
             p.Dispose();
             orderItems.Remove(o);
         }
+
         /// <summary>
         /// Обновление цены
         /// </summary>
@@ -92,7 +92,7 @@ namespace KFCForm
         /// <param name="e"></param>
         private void CheckProm_Click(object sender, EventArgs e)
         {
-            string [] promocodes = File.ReadAllLines("Promocodes.txt");
+            string[] promocodes = File.ReadAllLines("Promocodes.txt");
             string input = InputProm.Text.ToUpper();
             string[] s = new string[2];
             for (int i = 0; i < promocodes.Count(); i++)
@@ -134,9 +134,10 @@ namespace KFCForm
         /// <param name="e"></param>
         private void ToOrder_Click(object sender, EventArgs e) 
         {
+            //todo pizdec peredelat
             Orderpanel.Enabled = false;
             Pricepanel.Enabled = false;
-            double time =orderItems.Last().CookingTime;
+            double time = orderItems.Select(x => x.CookingTime).Max();
             tm.Interval = 1000;
             startValue = (int)time*60;
             tm.Start();
