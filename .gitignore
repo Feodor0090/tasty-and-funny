@@ -45,3 +45,10 @@ TestProjectRest/bin/Debug/net5.0/nunit_random_seed.tmp
 TestProjectRest/bin/Debug/net5.0/testhost.dll
 TestProjectRest/bin/Debug/net5.0/testhost.exe
 TestProjectRest/obj
+KFC/.vs
+KFC/obj
+KFCForm/.vs
+KFC/bin/Debug/KFC.dll
+KFC/bin/Debug/KFC.pdb
+KFC/bin/Debug
+KFCForm/obj
