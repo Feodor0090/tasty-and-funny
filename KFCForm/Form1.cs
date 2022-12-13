@@ -112,9 +112,9 @@ namespace KFCForm
             }
             else
             {
-                if (amount > 100)
+                if (amount > OrderItem.MAX_AMOUNT)
                 {
-                    MessageBox.Show("Мы не можем дать одному клиенту более 100 порций", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Мы не можем дать одному клиенту более {OrderItem.MAX_AMOUNT} порций", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 OrderItem order = new OrderItem(Dishes[index], amount);
