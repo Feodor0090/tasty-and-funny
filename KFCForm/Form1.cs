@@ -109,7 +109,6 @@ namespace KFCForm
             if (s != null)
             {
                 s.Amount += amount;
-
             }
             else
             {
