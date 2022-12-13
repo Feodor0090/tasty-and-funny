@@ -41,11 +41,9 @@ namespace KFCForm
 
         }
 
-        List<Panel> panels = new List<Panel>();
         //программа для кнопок удаления 
         void deleteOrder(Panel p, OrderItem o) {
             p.Dispose();
-            panels.Remove(p);
             orderItems.Remove(o);
         }
         /// <summary>
@@ -85,7 +83,6 @@ namespace KFCForm
         {
             var p = new OrderPanel(order, UpdPriceLabel, deleteOrder);
             Orderpanel.Controls.Add(p);
-            panels.Add(p);
         }
 
         /// <summary>
