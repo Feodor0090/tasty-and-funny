@@ -20,11 +20,10 @@ namespace KFCForm
         int index = 0;
         Item[] Dishes = Item.ReadFromCSV("db.csv");
         List<OrderItem> orderItems = new List<OrderItem>();
-        int amount;
         public Form1()
         {
             InitializeComponent();
-            
+
             if (index > Dishes.Length)
             {
                 index = 0;
