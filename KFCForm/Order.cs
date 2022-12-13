@@ -15,6 +15,7 @@ namespace KFCForm
     public partial class Order : Form
     {
         List<OrderItem> orderItems = new List<OrderItem>();
+        Timer tm = new Timer();
     
         public double OrderTotalPrice => orderItems.Select(x=>x.Price).Sum()*(1d-Discount);
         // размер скидки, 0d - нету, 1d - 100%
@@ -127,7 +128,7 @@ namespace KFCForm
                 MessageBox.Show("Ваш заказ готов. Приятного аппетита!", "Приходите снова!"); //отображается уведомление о готовности заказа
             }
         }
-        Timer tm = new Timer();
+
         /// <summary>
         /// Вызывается при нажатии заказать. Запускает таймер и отображает диалоговое окно, 
         /// в котором уведомляет о времени готовки заказа
