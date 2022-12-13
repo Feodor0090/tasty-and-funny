@@ -94,7 +94,6 @@ namespace KFCForm
         /// <param name="e"></param>
         private void NewOrder_Click(object sender, EventArgs e)
         {
-
             if (textBoxInput.Text == "0")
             {
                 MessageBox.Show("Сначала введите желаемое количество товара!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -105,13 +104,22 @@ namespace KFCForm
                 MessageBox.Show("Количество блюд должно быть целым положительным числом!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (amount > 100)
+
+            OrderItem s = orderItems.FirstOrDefault(x => x.Dish == Dishes[index]);
+            if (s != null)
             {
-                MessageBox.Show("Мы не можем дать одному клиенту более 100 порций", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                s.Amount += amount;
             }
-            OrderItem order = new OrderItem(Dishes[index], amount);
-            orderItems.Add(order);
+            else
+            {
+                if (amount > 100)
+                {
+                    MessageBox.Show("Мы не можем дать одному клиенту более 100 порций", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                OrderItem order = new OrderItem(Dishes[index], amount);
+                orderItems.Add(order);
+            }
         }
 
         /// <summary>
