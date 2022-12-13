@@ -120,7 +120,6 @@ namespace KFCForm
                 Dock = System.Windows.Forms.DockStyle.Top;
                 Location = new System.Drawing.Point(200, 200);
                 Size = new System.Drawing.Size(745, 141);
-                //todo добавлять панель на форму
             }
 
             void decrCount(object sender, EventArgs e) {
