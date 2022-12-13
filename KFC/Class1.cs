@@ -143,7 +143,19 @@ namespace Restaurant
         /// </summary>
         public string Name { get { return Dish.Name; } }
 
-        public uint Amount { get => amount; set => amount = Math.Min(100, value); }
+        public uint Amount
+        {
+            get => amount;
+            set
+            {
+                if (value > 100)
+                    amount = 100;
+                if (value == 0)
+                    amount = 1;
+                else
+                    amount = value;
+            }
+        }
 
         /// <summary>
         /// Конструктор по умолчанию
