@@ -28,6 +28,7 @@ namespace TestProjectRest
             order.DecAmount();
             Assert.AreEqual(count, order.Amount);
         }
+
         [Test]
         public void IncrAmount()
         {
