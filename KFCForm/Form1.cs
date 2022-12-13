@@ -24,7 +24,7 @@ namespace KFCForm
         public Form1()
         {
             InitializeComponent();
-            
+
             if (index > Dishes.Length)
             {
                 index = 0;
@@ -105,8 +105,17 @@ namespace KFCForm
                 MessageBox.Show("Количество блюд должно быть целым положительным числом!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            OrderItem order = new OrderItem(Dishes[index], amount);
-            orderItems.Add(order);
+            OrderItem s = orderItems.FirstOrDefault(x => x.Dish == Dishes[index]);
+            if (s != null)
+            {
+                s.Amount += amount;
+
+            }
+            else
+            {
+                OrderItem order = new OrderItem(Dishes[index], amount);
+                orderItems.Add(order);
+            }
         }
 
         /// <summary>
