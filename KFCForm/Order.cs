@@ -32,7 +32,12 @@ namespace KFCForm
             InitializeComponent();
             this.orderItems = orderItems;
             lableItogo.ForeColor = System.Drawing.Color.Black;
-            if (orderItems.Count == 0) labelEmpty.Visible = true;
+            if (orderItems.Count == 0)
+            {
+                labelEmpty.Visible = true;
+                button3.Enabled = false;
+            }
+
         }
 
         List<Panel> panels = new List<Panel>();
@@ -48,7 +53,11 @@ namespace KFCForm
         private void UpdPriceLabel()
         {
             lableItogo.Text = $"{OrderTotalPrice} руб.";
-            if (orderItems.Count == 0) labelEmpty.Visible = true;
+            if (orderItems.Count == 0)
+            {
+                labelEmpty.Visible = true;
+                button3.Enabled = false;
+            }
         }
 
         /// <summary>
