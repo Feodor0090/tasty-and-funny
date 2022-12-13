@@ -20,11 +20,11 @@ namespace Restaurant
         /// <summary>
         /// Наименование
         /// </summary>
-        public readonly string Name; 
+        public readonly string Name;
         /// <summary>
         /// Цена за 1 шт
         /// </summary>
-        public readonly double Price; 
+        public readonly double Price;
         /// <summary>
         /// Описание
         /// </summary>
@@ -32,20 +32,20 @@ namespace Restaurant
         /// <summary>
         /// Время приготовления
         /// </summary>
-        public readonly double CookingTime; 
+        public readonly double CookingTime;
         /// <summary>
         /// Состав
         /// </summary>
-        public readonly string Ingredient; 
+        public readonly string Ingredient;
         /// <summary>
         /// Вес одной порции
         /// </summary>
-        public readonly double Weight;   
+        public readonly double Weight;
         /// <summary>
         /// Демонстрационное изображение готового блюда
         /// </summary>
         public readonly Image Image;
-        
+
         /// <summary>
         /// Конструктор по умолчанию
         /// </summary>
@@ -58,45 +58,45 @@ namespace Restaurant
             CookingTime = 0.0;
             Ingredient = "";
         }
-            /// <summary>
-            /// Конструктор с параметрами
-            /// </summary>
-            /// <param name="name">Наименование блюда</param>
-            /// <param name="descr">Описание</param>
-            /// <param name="price">Цена за одну порцию</param>
-            /// <param name="weight">Вес одной порции</param>
-            /// <param name="receipt">Состав</param>
-            /// <param name="time">Время приготовления</param>
-            /// <param name="imageName">Название иллюстрации блюда</param>
-            public Item(string name, string descr, int price, int weight, string receipt, int time, string imageName)
+        /// <summary>
+        /// Конструктор с параметрами
+        /// </summary>
+        /// <param name="name">Наименование блюда</param>
+        /// <param name="descr">Описание</param>
+        /// <param name="price">Цена за одну порцию</param>
+        /// <param name="weight">Вес одной порции</param>
+        /// <param name="receipt">Состав</param>
+        /// <param name="time">Время приготовления</param>
+        /// <param name="imageName">Название иллюстрации блюда</param>
+        public Item(string name, string descr, int price, int weight, string receipt, int time, string imageName)
+        {
+            this.Name = name;
+            this.Description = descr;
+            this.Price = price;
+            this.Weight = weight;
+            this.Ingredient = receipt;
+            this.CookingTime = time;
+            this.Image = Image.FromFile(imageName);
+        }
+
+
+        /// <summary>
+        /// Получение данных из файла БД
+        /// </summary>
+        /// <param name="fileName">Название файла</param>
+        /// <returns>Список блюд и их характеристики</returns>
+        public static Item[] ReadFromCSV(string fileName)
+        {
+            var items = new List<Item>();
+            var lines = File.ReadAllLines(fileName, Encoding.UTF8).Skip(1).Select(x => x.Split('\t'));
+            foreach (var line in lines)
             {
-                this.Name = name;
-                this.Description = descr;
-                this.Price = price;
-                this.Weight = weight;
-                this.Ingredient = receipt;
-                this.CookingTime = time;
-                this.Image = Image.FromFile(imageName);
+                items.Add(new Item(line[0], line[1], int.Parse(line[2]), int.Parse(line[3]), line[4], int.Parse(line[5]), line[6]));
             }
+            return items.ToArray();
+        }
 
 
-           /// <summary>
-           /// Получение данных из файла БД
-           /// </summary>
-           /// <param name="fileName">Название файла</param>
-           /// <returns>Список блюд и их характеристики</returns>
-           public static Item[] ReadFromCSV(string fileName)
-            {
-                var items = new List<Item>();
-                var lines = File.ReadAllLines(fileName, Encoding.UTF8).Skip(1).Select(x => x.Split('\t'));
-                foreach (var line in lines)
-                {
-                    items.Add(new Item(line[0], line[1], int.Parse(line[2]), int.Parse(line[3]), line[4], int.Parse(line[5]), line[6]));
-                }
-                return items.ToArray();
-            }
-
-        
         /// <summary>
         /// Функция подсчёта цены по количеству
         /// </summary>
@@ -123,8 +123,8 @@ namespace Restaurant
         /// <summary>
         /// Количество порций
         /// </summary>
-        public uint Amount;
-        
+        private uint amount;
+
         /// <summary>
         /// Цена заказанных блюд
         /// </summary>
@@ -137,12 +137,14 @@ namespace Restaurant
         /// Время приготовление
         /// </summary>
         public double CookingTime => Dish.CookingTime;
-        
+
         /// <summary>
         /// Наименование
         /// </summary>
         public string Name { get { return Dish.Name; } }
-        
+
+        public uint Amount { get => amount; set => amount = Math.Min(100, value); }
+
         /// <summary>
         /// Конструктор по умолчанию
         /// </summary>
@@ -172,7 +174,7 @@ namespace Restaurant
         /// </summary>
         public void DecAmount()
         {
-            if(Amount == 1) return;
+            if (Amount == 1) return;
             Amount--;
         }
     }

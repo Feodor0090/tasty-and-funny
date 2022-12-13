@@ -20,7 +20,6 @@ namespace KFCForm
         int index = 0;
         Item[] Dishes = Item.ReadFromCSV("db.csv");
         List<OrderItem> orderItems = new List<OrderItem>();
-        int amount;
         public Form1()
         {
             InitializeComponent();
@@ -105,6 +104,7 @@ namespace KFCForm
                 MessageBox.Show("Количество блюд должно быть целым положительным числом!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             OrderItem s = orderItems.FirstOrDefault(x => x.Dish == Dishes[index]);
             if (s != null)
             {
@@ -112,6 +112,11 @@ namespace KFCForm
             }
             else
             {
+                if (amount > 100)
+                {
+                    MessageBox.Show("Мы не можем дать одному клиенту более 100 порций", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 OrderItem order = new OrderItem(Dishes[index], amount);
                 orderItems.Add(order);
             }
