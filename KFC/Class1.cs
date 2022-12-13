@@ -117,6 +117,11 @@ namespace Restaurant
     public class OrderItem
     {
         /// <summary>
+        /// Максимальное количество в 1 руки
+        /// </summary>
+        public const int MAX_AMOUNT = 100;
+
+        /// <summary>
         /// Блюдо
         /// </summary>
         public readonly Item Dish;
@@ -148,8 +153,8 @@ namespace Restaurant
             get => amount;
             set
             {
-                if (value > 100)
-                    amount = 100;
+                if (value > MAX_AMOUNT)
+                    amount = MAX_AMOUNT;
                 if (value == 0)
                     amount = 1;
                 else
