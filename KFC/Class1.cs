@@ -148,6 +148,9 @@ namespace Restaurant
         /// </summary>
         public string Name { get { return Dish.Name; } }
 
+        /// <summary>
+        /// свойства для amount
+        /// </summary>
         public uint Amount
         {
             get => amount;
