@@ -108,6 +108,10 @@ namespace KFCForm
             OrderItem s = orderItems.FirstOrDefault(x => x.Dish == Dishes[index]);
             if (s != null)
             {
+            	if (s.Amount + amount > OrderItem.MAX_AMOUNT)
+            	{
+            	    MessageBox.Show($"Мы не можем дать одному клиенту более {OrderItem.MAX_AMOUNT} порций - {OrderItem.MAX_AMOUNT} будет заказано!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            	}
                 s.Amount += amount;
             }
             else
