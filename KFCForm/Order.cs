@@ -103,26 +103,6 @@ namespace KFCForm
                 }
             }
         }
-        int startValue = 0;
-
-        /// <summary>
-        /// Таймер готовки заказа
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void tm_Tick(object sender, EventArgs e)
-        {
-            if (startValue != 0)
-            {
-                startValue--;
-            }
-            else
-            {
-                (sender as Timer).Stop(); //когда время вышло, таймер останавливается
-                (sender as Timer).Dispose();
-                MessageBox.Show("Ваш заказ готов. Приятного аппетита!", "Приходите снова!"); //отображается уведомление о готовности заказа
-            }
-        }
 
         /// <summary>
         /// Вызывается при нажатии заказать. Запускает таймер и отображает диалоговое окно, 
@@ -132,18 +112,15 @@ namespace KFCForm
         /// <param name="e"></param>
         private void ToOrder_Click(object sender, EventArgs e) 
         {
-            //todo pizdec peredelat
             Orderpanel.Enabled = false;
             Pricepanel.Enabled = false;
             double time = orderItems.Select(x => x.CookingTime).Max();
-            tm.Interval = 1000;
-            startValue = (int)time*60;
-            tm.Start();
-            orderItems.Clear();
-            tm.Tick += new EventHandler(tm_Tick);
             MessageBox.Show("Ваш заказ будет готовится "+time+ " мин", "Ждите...");
             this.Close(); 
             labelEmpty.Visible = true;
+            Task.Delay(time * 1000).ContinueWith(t => {
+                MessageBox.Show("Ваш заказ готов. Приятного аппетита!", "Приходите снова!");
+            });
         }
     }
 }
