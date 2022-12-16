@@ -116,7 +116,7 @@ namespace KFCForm
             MessageBox.Show("Ваш заказ будет готовится "+time+ " мин", "Ждите...");
             this.Close(); 
             labelEmpty.Visible = true;
-            Task.Delay(time * 1000).ContinueWith(t => {
+            Task.Delay((int)(time * 1000)).ContinueWith(t => {
                 MessageBox.Show("Ваш заказ готов. Приятного аппетита!", "Приходите снова!");
             });
         }
