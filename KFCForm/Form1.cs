@@ -23,7 +23,7 @@ namespace KFCForm
         public Form1()
         {
             InitializeComponent();
-
+            DescriptionLabel.Text = $"Не более {OrderItem.MAX_AMOUNT} штук в одни руки";
             if (index > Dishes.Length)
             {
                 index = 0;

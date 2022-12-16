@@ -158,7 +158,7 @@ namespace Restaurant
             {
                 if (value > MAX_AMOUNT)
                     amount = MAX_AMOUNT;
-                if (value == 0)
+                else if (value == 0)
                     amount = 1;
                 else
                     amount = value;
