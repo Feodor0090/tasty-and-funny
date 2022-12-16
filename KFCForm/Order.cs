@@ -66,11 +66,9 @@ namespace KFCForm
         /// <param name="e"></param>
         private void Order_Load(object sender, EventArgs e)
         {
-            int n = 0;
             foreach (OrderItem item in orderItems)
             {
                 CreatePanel(item);
-                n++;
             }
             UpdPriceLabel();
         }
