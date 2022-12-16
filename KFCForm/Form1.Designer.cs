@@ -40,9 +40,10 @@
             this.labelResult = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.CountLabel = new System.Windows.Forms.Label();
             this.textBoxInput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.DescriptionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -54,9 +55,10 @@
             this.label1.BackColor = System.Drawing.Color.MintCream;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label1.Location = new System.Drawing.Point(49, -9);
+            this.label1.Location = new System.Drawing.Point(39, -7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(503, 58);
+            this.label1.Size = new System.Drawing.Size(414, 47);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ресторан \"Весело и вкусно\"";
             // 
@@ -65,9 +67,10 @@
             this.button1.BackColor = System.Drawing.Color.MintCream;
             this.button1.Font = new System.Drawing.Font("Segoe Print", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button1.Location = new System.Drawing.Point(973, -1);
+            this.button1.Location = new System.Drawing.Point(778, -1);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 49);
+            this.button1.Size = new System.Drawing.Size(49, 39);
             this.button1.TabIndex = 1;
             this.button1.Text = "?";
             this.button1.UseVisualStyleBackColor = false;
@@ -76,9 +79,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.UpArrow;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 7);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(402, 378);
+            this.pictureBox1.Size = new System.Drawing.Size(322, 302);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -88,10 +92,11 @@
             this.LabelInf.AutoEllipsis = true;
             this.LabelInf.AutoSize = true;
             this.LabelInf.Font = new System.Drawing.Font("Segoe Script", 8.2F, System.Drawing.FontStyle.Bold);
-            this.LabelInf.Location = new System.Drawing.Point(432, 14);
-            this.LabelInf.MaximumSize = new System.Drawing.Size(450, 10000);
+            this.LabelInf.Location = new System.Drawing.Point(346, 11);
+            this.LabelInf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LabelInf.MaximumSize = new System.Drawing.Size(360, 8000);
             this.LabelInf.Name = "LabelInf";
-            this.LabelInf.Size = new System.Drawing.Size(0, 22);
+            this.LabelInf.Size = new System.Drawing.Size(0, 17);
             this.LabelInf.TabIndex = 3;
             // 
             // button2
@@ -99,9 +104,10 @@
             this.button2.BackColor = System.Drawing.Color.MintCream;
             this.button2.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button2.Location = new System.Drawing.Point(925, 301);
+            this.button2.Location = new System.Drawing.Point(740, 241);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 49);
+            this.button2.Size = new System.Drawing.Size(78, 39);
             this.button2.TabIndex = 4;
             this.button2.Text = "назад";
             this.button2.UseVisualStyleBackColor = false;
@@ -112,9 +118,10 @@
             this.button3.BackColor = System.Drawing.Color.MintCream;
             this.button3.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button3.Location = new System.Drawing.Point(1129, 301);
+            this.button3.Location = new System.Drawing.Point(903, 241);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 49);
+            this.button3.Size = new System.Drawing.Size(85, 39);
             this.button3.TabIndex = 5;
             this.button3.Text = "вперёд";
             this.button3.UseVisualStyleBackColor = false;
@@ -124,9 +131,10 @@
             // 
             this.panel1.Controls.Add(this.LabelInf);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 58);
+            this.panel1.Location = new System.Drawing.Point(0, 46);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(919, 430);
+            this.panel1.Size = new System.Drawing.Size(735, 344);
             this.panel1.TabIndex = 6;
             // 
             // panel2
@@ -135,12 +143,13 @@
             this.panel2.Controls.Add(this.labelResult);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.CountLabel);
             this.panel2.Controls.Add(this.textBoxInput);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(925, 58);
+            this.panel2.Location = new System.Drawing.Point(740, 46);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(310, 229);
+            this.panel2.Size = new System.Drawing.Size(248, 183);
             this.panel2.TabIndex = 7;
             // 
             // button5
@@ -148,9 +157,10 @@
             this.button5.BackColor = System.Drawing.Color.MintCream;
             this.button5.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button5.Location = new System.Drawing.Point(163, 131);
+            this.button5.Location = new System.Drawing.Point(130, 105);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(147, 83);
+            this.button5.Size = new System.Drawing.Size(118, 66);
             this.button5.TabIndex = 8;
             this.button5.Text = "корзина";
             this.button5.UseVisualStyleBackColor = false;
@@ -162,9 +172,10 @@
             this.labelResult.BackColor = System.Drawing.Color.MintCream;
             this.labelResult.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Bold);
             this.labelResult.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelResult.Location = new System.Drawing.Point(15, 118);
+            this.labelResult.Location = new System.Drawing.Point(12, 94);
+            this.labelResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(0, 30);
+            this.labelResult.Size = new System.Drawing.Size(0, 24);
             this.labelResult.TabIndex = 13;
             // 
             // button4
@@ -172,9 +183,10 @@
             this.button4.BackColor = System.Drawing.Color.MintCream;
             this.button4.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button4.Location = new System.Drawing.Point(7, 132);
+            this.button4.Location = new System.Drawing.Point(6, 106);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(154, 83);
+            this.button4.Size = new System.Drawing.Size(123, 66);
             this.button4.TabIndex = 12;
             this.button4.Text = "Добавить в корзину";
             this.button4.UseVisualStyleBackColor = false;
@@ -186,29 +198,32 @@
             this.label4.BackColor = System.Drawing.Color.MintCream;
             this.label4.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label4.Location = new System.Drawing.Point(21, 118);
+            this.label4.Location = new System.Drawing.Point(17, 94);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 35);
+            this.label4.Size = new System.Drawing.Size(0, 28);
             this.label4.TabIndex = 11;
             // 
-            // label3
+            // CountLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.MintCream;
-            this.label3.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(153, 59);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 30);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "шт.";
+            this.CountLabel.AutoSize = true;
+            this.CountLabel.BackColor = System.Drawing.Color.MintCream;
+            this.CountLabel.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Bold);
+            this.CountLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.CountLabel.Location = new System.Drawing.Point(122, 47);
+            this.CountLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CountLabel.Name = "CountLabel";
+            this.CountLabel.Size = new System.Drawing.Size(40, 24);
+            this.CountLabel.TabIndex = 10;
+            this.CountLabel.Text = "шт.";
             // 
             // textBoxInput
             // 
             this.textBoxInput.Font = new System.Drawing.Font("Segoe Print", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxInput.Location = new System.Drawing.Point(11, 51);
+            this.textBoxInput.Location = new System.Drawing.Point(9, 41);
+            this.textBoxInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxInput.Name = "textBoxInput";
-            this.textBoxInput.Size = new System.Drawing.Size(136, 38);
+            this.textBoxInput.Size = new System.Drawing.Size(110, 32);
             this.textBoxInput.TabIndex = 9;
             this.textBoxInput.Text = "1";
             // 
@@ -218,25 +233,38 @@
             this.label2.BackColor = System.Drawing.Color.MintCream;
             this.label2.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(7, 9);
+            this.label2.Location = new System.Drawing.Point(6, 7);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(227, 35);
+            this.label2.Size = new System.Drawing.Size(180, 28);
             this.label2.TabIndex = 8;
             this.label2.Text = "Добавить в корзину";
             // 
+            // DescriptionLabel
+            // 
+            this.DescriptionLabel.AutoSize = true;
+            this.DescriptionLabel.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DescriptionLabel.Location = new System.Drawing.Point(740, 299);
+            this.DescriptionLabel.Name = "DescriptionLabel";
+            this.DescriptionLabel.Size = new System.Drawing.Size(60, 28);
+            this.DescriptionLabel.TabIndex = 8;
+            this.DescriptionLabel.Text = "label3";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.MintCream;
-            this.ClientSize = new System.Drawing.Size(1247, 531);
+            this.ClientSize = new System.Drawing.Size(998, 425);
+            this.Controls.Add(this.DescriptionLabel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -261,11 +289,12 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label CountLabel;
         private System.Windows.Forms.TextBox textBoxInput;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelResult;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label DescriptionLabel;
     }
 }
 
