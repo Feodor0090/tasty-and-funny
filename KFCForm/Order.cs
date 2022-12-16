@@ -15,7 +15,6 @@ namespace KFCForm
     public partial class Order : Form
     {
         List<OrderItem> orderItems = new List<OrderItem>();
-        Timer tm = new Timer();
     
         public double OrderTotalPrice => orderItems.Select(x => x.Price).Sum() * (1d - Discount);
         // размер скидки, 0d - нету, 1d - 100%
@@ -23,8 +22,7 @@ namespace KFCForm
         
         public Order()
         {
-            InitializeComponent(); 
-            tm = new Timer();
+            InitializeComponent();
         }
 
         public Order(List<OrderItem> orderItems)
