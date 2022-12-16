@@ -8,28 +8,31 @@ namespace KFCForm
 {
     public partial class Order
     {
-        private class OrderPanel : Panel {
+        private class OrderPanel : Panel
+        {
 
             public readonly OrderItem item;
             private readonly Action upd;
             private readonly Label PriceLabel;
             private readonly Label CountLabel;
 
-            public OrderPanel(OrderItem order, Action onOrderUpdate, Action<Panel, OrderItem> deleteAction) {
+            public OrderPanel(OrderItem order, Action onOrderUpdate, Action<Panel, OrderItem> deleteAction)
+            {
+                
                 item = order;
                 upd = onOrderUpdate;
-
-                PictureBox pic = new PictureBox();
                 // 
                 // pictureBox1
                 // 
+                PictureBox pic = new PictureBox();                
                 pic.Size = new System.Drawing.Size(123, 111);
                 pic.Image = order.Image;
-                pic.SizeMode=PictureBoxSizeMode.StretchImage;
+                pic.SizeMode = PictureBoxSizeMode.StretchImage;
                 pic.Location = new System.Drawing.Point(3, 3);
-                pic.TabStop=false;
+                pic.TabStop = false;
                 // 
                 // button4
+                //кнопка удалить
                 // 
                 Button but2 = new Button();
                 but2.BackColor = System.Drawing.Color.MintCream;
@@ -40,11 +43,13 @@ namespace KFCForm
                 but2.TabIndex = 7;
                 but2.Text = "удалить";
                 but2.UseVisualStyleBackColor = false;
-                but2.Click += (a,b)=>{
-                    deleteAction(this,item);
+                but2.Click += (a, b) =>
+                {
+                    deleteAction(this, item);
                     upd();
                 };
                 // 
+                //надпись стоимости 
                 // labelPrice
                 // 
                 PriceLabel = new Label();
@@ -58,6 +63,7 @@ namespace KFCForm
                 PriceLabel.Text = order.Price.ToString() + " руб.";
                 // 
                 // button1
+                //кнопка +
                 // 
                 Button but1 = new Button();
                 but1.BackColor = System.Drawing.Color.MintCream;
@@ -70,7 +76,7 @@ namespace KFCForm
                 but1.Click += incrCount;
                 but1.UseVisualStyleBackColor = false;
                 // 
-                // labelName
+                // название блюда
                 // 
                 Label lable3 = new System.Windows.Forms.Label();
                 lable3.AutoSize = true;
@@ -85,6 +91,7 @@ namespace KFCForm
                 lable3.Text = order.Name;
                 // 
                 // button2
+                //кнопка -
                 // 
                 Button but = new Button();
                 but.BackColor = System.Drawing.Color.MintCream;
@@ -98,6 +105,7 @@ namespace KFCForm
                 but.Click += decrCount;
                 // 
                 // labelCount
+                // кол-во порций
                 // 
                 CountLabel = new Label();
                 CountLabel.AutoSize = true;
@@ -121,15 +129,25 @@ namespace KFCForm
                 Location = new System.Drawing.Point(200, 200);
                 Size = new System.Drawing.Size(745, 141);
             }
-
-            void decrCount(object sender, EventArgs e) {
+            /// <summary>
+            /// действие  при нажатии -
+            /// </summary>
+            /// <param name="sender"></param>
+            /// <param name="e"></param>
+            void decrCount(object sender, EventArgs e)
+            {
                 item.DecAmount();
                 upd();
                 PriceLabel.Text = $"{item.Price} руб.";
                 CountLabel.Text = $"{item.Amount} шт.";
             }
-
-            void incrCount(object sender, EventArgs e) {
+            /// <summary>
+            /// действие  при нажатии +
+            /// </summary>
+            /// <param name="sender"></param>
+            /// <param name="e"></param>
+            void incrCount(object sender, EventArgs e)
+            {
                 item.IncAmount();
                 upd();
                 PriceLabel.Text = $"{item.Price} руб.";
